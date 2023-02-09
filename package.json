@@ -1,0 +1,31 @@
+{
+  "name": "subshort",
+  "version": "1.0.0",
+  "description": "SubShort is a URL Shortner",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
+    "http-status-codes": "^2.2.0",
+    "mongoose": "^6.9.0",
+    "morgan": "^1.10.0",
+    "xss-clean": "^0.1.1"
+  }
+}
