@@ -21,5 +21,9 @@ shortenBtn.addEventListener("click", function (event) {
         .getElementById("short-url")
         .setAttribute("href", `https://subshort.onrender.com/${shortUrl}`);
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+        document.getElementById(
+          "error"
+        ).innerHTML = `Invalid URL.`;
+    });
 });
