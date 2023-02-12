@@ -14,6 +14,7 @@ shortenBtn.addEventListener("click", function (event) {
     .then((response) => response.json())
     .then((data) => {
       const shortUrl = data.shortURL.shortURL;
+      document.getElementById("error").innerHTML = ``;
       document.getElementById(
         "short-url"
       ).innerHTML = `https://subshort.onrender.com/${shortUrl}`;

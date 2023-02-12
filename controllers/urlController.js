@@ -23,7 +23,7 @@ const redirectURL = async (req, res) => {
   const { userShortURL } = req.params;
   const redirectURL = await URL.findOne({ shortURL: userShortURL });
   if (!redirectURL) {
-    throw new CustomError.BadRequestError("Invalid URL");
+    throw new CustomError.BadRequestError("The URL that you used was Invalid.");
   }
 
   res.redirect(redirectURL.longURL);
