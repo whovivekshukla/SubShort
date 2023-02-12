@@ -20,6 +20,7 @@ shortenBtn.addEventListener("click", function (event) {
       ).innerHTML = `Short URL: <a href="https://subshort.onrender.com/${shortUrl}" target="_blank" id="short-url">https://subshort.onrender.com/${shortUrl}</a>`;
     })
     .catch((error) => {
+      document.getElementById("short-url").innerHTML = ``;
       document.getElementById("error").innerHTML = `Invalid URL.`;
     });
 });
