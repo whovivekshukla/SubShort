@@ -17,14 +17,9 @@ shortenBtn.addEventListener("click", function (event) {
       document.getElementById("error").innerHTML = ``;
       document.getElementById(
         "short-url"
-      ).innerHTML = `https://subshort.onrender.com/${shortUrl}`;
-      document
-        .getElementById("short-url")
-        .setAttribute("href", `https://subshort.onrender.com/${shortUrl}`);
+      ).innerHTML = `Short URL: <a href="https://subshort.onrender.com/${shortUrl}" target="_blank" id="short-url">https://subshort.onrender.com/${shortUrl}</a>`;
     })
     .catch((error) => {
-        document.getElementById(
-          "error"
-        ).innerHTML = `Invalid URL.`;
+      document.getElementById("error").innerHTML = `Invalid URL.`;
     });
 });
