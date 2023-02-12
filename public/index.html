@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>URL Shortener</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">URL Shortener</h1>
+        <br>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <form>
+                    <div class="form-group">
+                        <label for="long-url">Long URL:</label>
+                        <input type="text" class="form-control" id="long-url">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" id="shorten-btn">Shorten</button>
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <p>Short URL: <a href="#" id="short-url"></a></p>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
