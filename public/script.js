@@ -14,13 +14,11 @@ shortenBtn.addEventListener("click", function (event) {
     .then((response) => response.json())
     .then((data) => {
       const shortUrl = data.shortURL.shortURL;
-      document.getElementById("error").innerHTML = ``;
       document.getElementById(
         "short-url"
       ).innerHTML = `Short URL: <a href="https://subshort.onrender.com/${shortUrl}" target="_blank" id="short-url">https://subshort.onrender.com/${shortUrl}</a>`;
     })
     .catch((error) => {
-      document.getElementById("short-url").innerHTML = ``;
-      document.getElementById("error").innerHTML = `Invalid URL.`;
+      document.getElementById("short-url").innerHTML = `Invalid URL.`;
     });
 });
