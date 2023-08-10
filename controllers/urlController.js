@@ -10,12 +10,6 @@ const shortURL = async (req, res) => {
   if (!validUrl.isUri(url)) {
     throw new CustomError.NotFoundError("Invalid URL.");
   }
-
-  const checkExistingURL = await URL.findOne({ longURL: url });
-  if (checkExistingURL) {
-    res.status(StatusCodes.OK).json({ shortURL: checkExistingURL });
-    return;
-  }
   const shortURL = crypto.randomBytes(5).toString("hex");
   const shortenURL = await URL.create({
     shortURL: shortURL,
