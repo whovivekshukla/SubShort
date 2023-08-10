@@ -13,7 +13,7 @@ const shortURL = async (req, res) => {
 
   const checkExistingURL = await URL.findOne({ longURL: url });
   if (checkExistingURL) {
-    res.status(StatusCodes.OK).json({ URL: checkExistingURL });
+    res.status(StatusCodes.OK).json({ shortURL: checkExistingURL });
     return;
   }
   const shortURL = crypto.randomBytes(5).toString("hex");
@@ -22,7 +22,7 @@ const shortURL = async (req, res) => {
     longURL: url,
   });
 
-  res.status(StatusCodes.CREATED).json({ URL: shortenURL });
+  res.status(StatusCodes.CREATED).json({ shortURL: shortenURL });
 };
 
 const redirectURL = async (req, res) => {
