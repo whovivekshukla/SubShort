@@ -13,7 +13,7 @@ const shortURL = async (req, res) => {
 
   const checkExistingURL = await URL.findOne({ longURL: url });
   if (checkExistingURL) {
-    res.status(StatusCodes.OK).json({ shortURL: checkExistingURL });
+    res.status(StatusCodes.OK).json({ URL: checkExistingURL });
     return;
   }
   const shortURL = crypto.randomBytes(5).toString("hex");
@@ -22,14 +22,14 @@ const shortURL = async (req, res) => {
     longURL: url,
   });
 
-  res.status(StatusCodes.CREATED).json({ shortURL: shortenURL });
+  res.status(StatusCodes.CREATED).json({ URL: shortenURL });
 };
 
 const redirectURL = async (req, res) => {
   const { userShortURL } = req.params;
   const redirectURL = await URL.findOne({ shortURL: userShortURL });
   if (!redirectURL) {
-    throw new CustomError.BadRequestError("The URL that you used was Invalid.");
+    throw new CustomError.NotFoundError("Invalid URL");
   }
 
   res.redirect(redirectURL.longURL);
