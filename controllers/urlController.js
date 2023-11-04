@@ -1,6 +1,5 @@
 const URL = require("../model/URL");
 const CustomError = require("../errors");
-const crypto = require("crypto");
 const StatusCodes = require("http-status-codes");
 const validUrl = require("valid-url");
 
